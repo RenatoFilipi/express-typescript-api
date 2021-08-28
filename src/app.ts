@@ -1,10 +1,8 @@
 import express from "express";
+import { demoRouter } from "./routes/DemoRoutes";
 
 const app = express();
 app.use(express.json());
-
-app.get("/", (request, response) => {
-  return response.json({ msg: "Hello Developers!" });
-});
+app.use(demoRouter);
 
 export { app };
