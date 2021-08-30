@@ -7,4 +7,8 @@ export class DemoService {
     const value = await this.demoRepository.RequestData();
     return value;
   }
+
+  async Insert(data: any): Promise<String> {
+    return "Insert func from DemoService!";
+  }
 }

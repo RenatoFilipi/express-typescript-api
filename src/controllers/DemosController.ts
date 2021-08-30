@@ -8,4 +8,9 @@ export class DemoController {
     const value = await this.demoService.handle();
     return response.json({ message: value });
   }
+
+  async post(request: Request, response: Response): Promise<Response> {
+    const value = await this.demoService.Insert(request.body);
+    return response.json({ message: value });
+  }
 }
