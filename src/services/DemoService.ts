@@ -1,4 +1,4 @@
-import { IDemoRepository } from "../interfaces/IDemoRepository";
+import { IDemoRepository } from "../interfaces/IDemoInterface";
 
 export class DemoService {
   constructor(private demoRepository: IDemoRepository) {}

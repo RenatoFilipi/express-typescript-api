@@ -1,4 +1,4 @@
-import { IDemoRepository } from "../interfaces/IDemoRepository";
+import { IDemoRepository } from "../interfaces/IDemoInterface";
 
 export class DemoRepository implements IDemoRepository {
   async RequestData(): Promise<String> {
