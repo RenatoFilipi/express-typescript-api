@@ -1,3 +1,3 @@
 export interface IDemoRepository {
-  RequestData(): Promise<String>;
+  getPeople(data: any): Promise<any>;
 }

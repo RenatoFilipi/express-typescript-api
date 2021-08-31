@@ -11,7 +11,7 @@ app.use((error: unknown, request: Request, response: Response, next: NextFunctio
   if (error instanceof HttpException) {
     return response.status(error.status).json({ message: error.message });
   } else {
-    return response.status(500).json({ message: "Unkown error" });
+    return response.status(500).json({ message: "Unknown error" });
   }
 });
 

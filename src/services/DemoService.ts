@@ -4,16 +4,20 @@ import { HttpException } from "../exceptions/HttpExcepetion";
 export class DemoService {
   constructor(private demoRepository: IDemoRepository) {}
 
-  async handle() {
-    const value = await this.demoRepository.RequestData();
-    return value;
-  }
-
-  async Insert(data: any) {
-    const { name } = data;
-    if (!name.trim().length) {
-      throw new HttpException(400, "Invalid name!");
+  async starwars(data: any) {
+    if (Object.keys(data).length === 0) {
+      throw new HttpException(400, "Invalid request");
     }
-    return "Insert func from DemoService!";
+    if (!data.name.trim().length) {
+      throw new HttpException(400, "Name is empty");
+    }
+    const response = await this.demoRepository.getPeople(data);
+    const character = {
+      name: response[0].name,
+      gender: response[0].gender,
+      hairColor: response[0].hair_color,
+      eyeColor: response[0].eye_color,
+    };
+    return character;
   }
 }
