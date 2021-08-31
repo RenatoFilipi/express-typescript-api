@@ -1,5 +1,5 @@
 import { DemoService } from "../services/DemoService";
-import { DemoController } from "../controllers/DemosController";
+import { DemoController } from "../controllers/DemoController";
 import { DemoRepository } from "../repositories/DemoRepository";
 
 const demoRepository = new DemoRepository();
