@@ -12,6 +12,11 @@ export class DemoService {
       throw new HttpException(400, "Name is empty");
     }
     const response = await this.demoRepository.getPeople(data);
+
+    if (response.length === 0) {
+      throw new HttpException(200, "No result found");
+    }
+
     const character = {
       name: response[0].name,
       gender: response[0].gender,
