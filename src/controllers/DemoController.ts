@@ -12,4 +12,13 @@ export class DemoController {
       return next(error);
     }
   }
+
+  async health(request: Request, response: Response, next: NextFunction) {
+    try {
+      const date = new Date();
+      return response.json({ msg: "OK", timestamp: date });
+    } catch (error: unknown) {
+      return next(error);
+    }
+  }
 }

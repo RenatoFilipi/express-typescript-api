@@ -7,4 +7,8 @@ demoRouter.post("/demo/starwars", (request: Request, response: Response, next: N
   return demoController.starwars(request, response, next);
 });
 
+demoRouter.get("/demo/hc", (request: Request, response: Response, next: NextFunction) => {
+  return demoController.health(request, response, next);
+});
+
 export { demoRouter };
