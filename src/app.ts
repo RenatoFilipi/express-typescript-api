@@ -1,7 +1,7 @@
 import express, { Request, Response, NextFunction } from "express";
 import { HttpException } from "./exceptions/HttpExcepetion";
 import { demoRouter } from "./routes/DemoRoutes";
-require("express-async-errors");
+import "express-async-errors";
 
 const app = express();
 app.use(express.json());
